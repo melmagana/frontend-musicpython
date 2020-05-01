@@ -1,6 +1,21 @@
 import React, {Component} from 'react'
 
 export default class RegisterForm extends Component {
+	constructor() {
+		super()
+
+		this.state = {
+			name: '',
+			username: '',
+			email: '',
+			password: ''
+		}
+	}
+	handleChange = (event) => {
+		this.setState({
+			[event.target.name]: event.target.value
+		})
+	}
 	render() {
 		return(
 			<div className="RegisterForm">
@@ -12,6 +27,8 @@ export default class RegisterForm extends Component {
 							type='text'
 							name='name'
 							placeholder='enter name'
+							value={this.state.name}
+							onChange={this.handleChange}
 						/>
 					</div>
 					<div>
@@ -20,6 +37,8 @@ export default class RegisterForm extends Component {
 							type='username'
 							name='username'
 							placeholder='enter username'
+							value={this.state.username}
+							onChange={this.handleChange}
 						/>
 					</div>
 					<div>
@@ -28,6 +47,8 @@ export default class RegisterForm extends Component {
 							type='email'
 							name='email'
 							placeholder='enter email'
+							value={this.state.email}
+							onChange={this.handleChange}
 						/>
 					</div>
 					<div>
@@ -36,6 +57,8 @@ export default class RegisterForm extends Component {
 							type='password'
 							name='password'
 							placeholder='enter password'
+							value={this.state.password}
+							onChange={this.handleChange}
 						/>
 					</div>
 					<button>sign up</button>
