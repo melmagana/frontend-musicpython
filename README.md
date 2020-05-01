@@ -1,6 +1,13 @@
 # musicpython
 
-![alt text](https://i.imgur.com/xrgYD6a.jpg "wireframe")
+![alt text](https://i.imgur.com/MkVoyDQ.png "wireframe")
+![alt text](https://i.imgur.com/SvpZYd7.png "wireframe")
+![alt text](https://i.imgur.com/SE2CwjG.png "wireframe")
+![alt text](https://i.imgur.com/e2sOSzo.png "wireframe")
+![alt text](https://i.imgur.com/s1T2mjp.png "wireframe")
+![alt text](https://i.imgur.com/iH83k4g.png "wireframe")
+![alt text](https://i.imgur.com/jzCblMP.png "wireframe")
+
 
 #### about musicpython
 App allows users to save their favorite songs in a "collection".
