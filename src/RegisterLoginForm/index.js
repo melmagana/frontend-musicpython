@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-export default class RegisterForm extends Component {
+export default class RegisterLoginForm extends Component {
 	constructor() {
 		super()
 
@@ -38,7 +38,7 @@ export default class RegisterForm extends Component {
 	}
 	render() {
 		return(
-			<div className="RegisterForm">
+			<div className="RegisterLoginForm">
 				<h2>{this.state.action}</h2>
 				<form onSubmit={this.handleSubmit}>
 					{

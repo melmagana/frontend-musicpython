@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
-import RegLogForm from './RegLogForm'
+import RegisterLoginForm from './RegisterLoginForm'
+import Logout from './Logout'
 
 export default class App extends Component {
     constructor() {
@@ -67,16 +68,46 @@ export default class App extends Component {
             console.error(err)
         }
     }
+    logout = async () => {
+        try{
+            const url = process.env.REACT_APP_API_URL + '/api/v1/users/logout'
+
+            const logoutResponse = await fetch(url, {
+                credentials: 'include'
+            })
+            console.log('logoutResponse', logoutResponse)
+            const logoutJson = await logoutResponse.json()
+            console.log('logoutJson', logoutJson)
+
+            if(logoutResponse.status === 200) {
+                this.setState({
+                    loggedIn: false,
+                    loggedInUsername: ''
+                })
+            }
+        } catch(err) {
+            console.error('Error logging out')
+            console.error(err)
+        }
+    }
 
     render() {
         console.log(process.env)
         return(
             <div className="App">
                 <h1>Hello, World!</h1>
-                <RegLogForm 
-                    login={this.login}
-                    register={this.register}
-                />
+                {   
+                    this.state.loggedIn
+                    ?
+                    <div>
+                        <Logout username={this.state.loggedInUsername} logout={this.logout}/>
+                    </div>
+                    :
+                    <RegisterLoginForm 
+                        login={this.login}
+                        register={this.register}
+                    />
+                }
             </div>
         )
     }
