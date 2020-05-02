@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 import RegisterLoginForm from './RegisterLoginForm'
 import Logout from './Logout'
-import MySongContainer from './MySongContainer'
+// import SongContainer from './SongContainer'
+import UserContainer from './UserContainer'
 
 export default class App extends Component {
     constructor() {
@@ -101,7 +102,7 @@ export default class App extends Component {
                     ?
                     <div>
                         <Logout username={this.state.loggedInUsername} logout={this.logout}/>
-                        <MySongContainer />
+                        <UserContainer />
                     </div>
                     :
                     <RegisterLoginForm 

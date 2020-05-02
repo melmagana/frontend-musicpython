@@ -13,6 +13,8 @@ export default function MySongList(props) {
 					{song.genre}
 					<br/>
 					{song.artist}
+					<br/>
+					{song.date_posted}
 				</Card.Content>
 			</Card>
 		)

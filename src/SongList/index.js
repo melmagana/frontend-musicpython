@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Header} from 'semantic-ui-react'
+import {Card} from 'semantic-ui-react'
 
 export default function SongList(props) {
 	const songs = props.songs.map(song => {
