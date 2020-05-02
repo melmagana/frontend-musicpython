@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import RegisterLoginForm from './RegisterLoginForm'
 import Logout from './Logout'
+import SongContainer from './SongContainer'
 
 export default class App extends Component {
     constructor() {
@@ -92,7 +93,6 @@ export default class App extends Component {
     }
 
     render() {
-        console.log(process.env)
         return(
             <div className="App">
                 <h1>Hello, World!</h1>
@@ -101,6 +101,7 @@ export default class App extends Component {
                     ?
                     <div>
                         <Logout username={this.state.loggedInUsername} logout={this.logout}/>
+                        <SongContainer />
                     </div>
                     :
                     <RegisterLoginForm 
