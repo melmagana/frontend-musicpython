@@ -1,7 +1,7 @@
 import React from 'react'
-import {Card, Header} from 'semantic-ui-react'
+import {Card} from 'semantic-ui-react'
 
-export default function SongList(props) {
+export default function MySongList(props) {
 	const songs = props.songs.map(song => {
 		return(
 			<Card key={song.id}>
@@ -18,7 +18,7 @@ export default function SongList(props) {
 		)
 	})
 	return(
-		<div className="SongList">
+		<div className="MySongList">
 			<Card.Group>
 				{songs}
 			</Card.Group>
