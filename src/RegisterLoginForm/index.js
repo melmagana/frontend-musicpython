@@ -82,7 +82,7 @@ export default class RegisterLoginForm extends Component {
 						<input
 							type='password'
 							name='password'
-							placeholder='enter email'
+							placeholder='enter password'
 							value={this.state.password}
 							onChange={this.handleChange}
 						/>

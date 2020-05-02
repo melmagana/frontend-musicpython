@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card} from 'semantic-ui-react'
+import {Card, Button} from 'semantic-ui-react'
 
 export default function MySongList(props) {
 	const songs = props.songs.map(song => {
@@ -15,6 +15,12 @@ export default function MySongList(props) {
 					{song.artist}
 					<br/>
 					{song.date_posted}
+					<Button>
+					Edit
+					</Button>
+					<Button onClick={() => props.deleteSong(song.id)}>
+					Delete
+				</Button>
 				</Card.Content>
 			</Card>
 		)
