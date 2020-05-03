@@ -3,6 +3,7 @@ import {Card, Button} from 'semantic-ui-react'
 
 export default function MySongList(props) {
 	const songs = props.songs.map(song => {
+		console.log(props.songs)
 		return(
 			<Card key={song.id}>
 				<Card.Content extra>

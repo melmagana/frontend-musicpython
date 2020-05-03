@@ -105,7 +105,7 @@ export default class MySongContainer extends Component {
 				}
 			})
 			console.log('updateSongResponse', updateSongResponse)
-			const updateSongJson = updateSongResponse.json()
+			const updateSongJson = await updateSongResponse.json()
 			console.log('updateSongJson',updateSongJson)
 
 			if(updateSongResponse.status === 200) {
