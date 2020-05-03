@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import MySongList from '../MySongList'
 import AddSongForm from '../AddSongForm'
+import EditSongModal from '../EditSongModal'
 
 export default class MySongContainer extends Component {
 	constructor() {
@@ -91,6 +92,42 @@ export default class MySongContainer extends Component {
 			idOfSongToEdit: idOfSongToEdit
 		})
 	}
+	updateSong = async (updateSongInfo) => {
+		const url = process.env.REACT_APP_API_URL + '/api/v1/songs/' + this.state.idOfSongToEdit
+
+		try {
+			const updateSongResponse = await fetch(url, {
+				credentials: 'include',
+				method: 'PUT',
+				body: JSON.stringify(updateSongInfo),
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			})
+			console.log('updateSongResponse', updateSongResponse)
+			const updateSongJson = updateSongResponse.json()
+			console.log('updateSongJson',updateSongJson)
+
+			if(updateSongResponse.status === 200) {
+				const songs = this.state.songs
+				const indexOfSongBeingUpdated = songs.findIndex(song => song.id === this.state.idOfSongToEdit)
+				songs[indexOfSongBeingUpdated] = updateSongJson.data
+				this.setState({
+					songs: songs,
+					idOfSongToEdit: -1
+				})
+			}
+
+		} catch(err) {
+			console.error('error updating song')
+			console.error(err)
+		}
+	}
+	closeModal = () => {
+		this.setState({
+			idOfSongToEdit: -1
+		})
+	}
 	render(){
 		return(
 			<div className="MySongContainer">
@@ -101,6 +138,18 @@ export default class MySongContainer extends Component {
 					deleteSong={this.deleteSong}
 					editSong={this.editSong}
 				/>
+				{
+					this.state.idOfSongToEdit > -1
+					?
+					<EditSongModal
+						key={this.state.idOfSongToEdit}
+						songToEdit={this.state.songs.find((song) => song.id === this.state.idOfSongToEdit)}
+						updateSong={this.updateSong}
+						closeModal={this.closeModal}
+					/>
+					:
+					null
+				}
 			</div>
 		)
 	}
