@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import './App.css';
 import RegisterLoginForm from './RegisterLoginForm'
-import Logout from './Logout'
+import Header from './Header'
 // import SongContainer from './SongContainer'
 // import UserContainer from './UserContainer'
 import MySongContainer from './MySongContainer'
+// import Home from './Home'
 
 export default class App extends Component {
     constructor() {
@@ -97,12 +98,11 @@ export default class App extends Component {
     render() {
         return(
             <div className="App">
-                <h1>Hello, World!</h1>
                 {   
                     this.state.loggedIn
                     ?
                     <div>
-                        <Logout username={this.state.loggedInUsername} logout={this.logout}/>
+                        <Header username={this.state.loggedInUsername} logout={this.logout}/>
                         <MySongContainer />
                     </div>
                     :

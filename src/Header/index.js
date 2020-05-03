@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Logout(props) {
+export default function Header(props) {
 	return(
 		<p>
 			Logged in as {props.username}
