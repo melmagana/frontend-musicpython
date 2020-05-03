@@ -85,6 +85,12 @@ export default class MySongContainer extends Component {
 			console.error(err)
 		}
 	}
+	editSong = (idOfSongToEdit) => {
+		console.log('id of song to edit:', idOfSongToEdit)
+		this.setState({
+			idOfSongToEdit: idOfSongToEdit
+		})
+	}
 	render(){
 		return(
 			<div className="MySongContainer">
@@ -93,6 +99,7 @@ export default class MySongContainer extends Component {
 				<MySongList 
 					songs={this.state.songs}
 					deleteSong={this.deleteSong}
+					editSong={this.editSong}
 				/>
 			</div>
 		)

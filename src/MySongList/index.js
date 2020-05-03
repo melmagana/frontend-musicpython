@@ -15,12 +15,12 @@ export default function MySongList(props) {
 					{song.artist}
 					<br/>
 					{song.date_posted}
-					<Button>
+					<Button onClick={() => props.editSong(song.id)}>
 					Edit
 					</Button>
 					<Button onClick={() => props.deleteSong(song.id)}>
 					Delete
-				</Button>
+					</Button>
 				</Card.Content>
 			</Card>
 		)
