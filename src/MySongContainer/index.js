@@ -2,13 +2,16 @@ import React, {Component} from 'react'
 import MySongList from '../MySongList'
 import AddSongForm from '../AddSongForm'
 import EditSongModal from '../EditSongModal'
+import Header from '../Header'
+import SongContainer from '../SongContainer'
 
 export default class MySongContainer extends Component {
 	constructor() {
 		super()
 
 		this.state = {
-			songs: []
+			songs: [],
+			showSongs: false
 		}
 	}
 	componentDidMount() {
@@ -128,9 +131,21 @@ export default class MySongContainer extends Component {
 			idOfSongToEdit: -1
 		})
 	}
+	showSongs = () => {
+		if(this.state.showSongs === false) {
+			this.setState({
+				showSongs: true
+			})
+		} else {
+			this.setState({
+				showSongs: false
+			})
+		}
+	}
 	render(){
 		return(
 			<div className="MySongContainer">
+				<span onClick={this.showSongs}>All Songs</span>
 				<h2>MySongContainer</h2>
 				<AddSongForm createSong={this.createSong}/>
 				<MySongList 
@@ -138,6 +153,13 @@ export default class MySongContainer extends Component {
 					deleteSong={this.deleteSong}
 					editSong={this.editSong}
 				/>
+				{
+					this.state.showSongs ? (
+						<SongContainer/>
+					) : (
+						null
+					)
+				}
 				{
 					this.state.idOfSongToEdit > -1
 					?
