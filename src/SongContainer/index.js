@@ -33,7 +33,7 @@ export default class SongContainer extends Component {
 	render(){
 		return(
 			<div className="SongContainer">
-				<h2>SongContainer</h2>
+				<h2>All Songs</h2>
 				<SongList songs={this.state.songs}/>
 			</div>
 		)

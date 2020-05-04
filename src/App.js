@@ -2,10 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import RegisterLoginForm from './RegisterLoginForm'
 import Header from './Header'
-// import SongContainer from './SongContainer'
-// import UserContainer from './UserContainer'
-import MySongContainer from './MySongContainer'
-// import Home from './Home'
+import SongContainer from './SongContainer'
 
 export default class App extends Component {
     constructor() {
@@ -103,7 +100,7 @@ export default class App extends Component {
                     ?
                     <div>
                         <Header username={this.state.loggedInUsername} logout={this.logout}/>
-                        <MySongContainer />
+                        <SongContainer />
                     </div>
                     :
                     <RegisterLoginForm 
