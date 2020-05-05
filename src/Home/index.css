@@ -1,0 +1,14 @@
+.Home {
+	margin-top: 100px;
+	text-align: center;
+}
+
+.Home > h1 {
+	margin-bottom: 50px;
+	font-size: 50pt;
+}
+
+.Home > p {
+	line-height: 30px;
+	letter-spacing: .5px;
+}

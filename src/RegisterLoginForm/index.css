@@ -1,3 +1,68 @@
 .RegisterLoginForm{
-	margin: 0 auto;
+	text-align: center;
+}
+.RegisterLoginForm > form {
+	height: auto;
+	padding-top: 30px;
+	padding-bottom: 40px;
+	margin-top: 100px;
+
+}
+.RegisterLoginForm > form > h2 {
+	font-size: 30pt;
+	letter-spacing: 1px;
+}
+.RegisterLoginForm > form > div > input[type=email] {
+	border: none;
+	border-bottom: 3px solid #82edb9;
+	width: 90%;
+	height: 50px;
+	margin-top: 10px;
+	font-size: 20pt;
+	color:#82edb9;
+}
+.RegisterLoginForm > form > div > input[type=password] {
+	border: none;
+	border-bottom: 3px solid #82edb9;
+	width: 90%;
+	height: 50px;
+	margin-top: 10px;
+	font-size: 20pt;
+	color:#82edb9;
+}
+.RegisterLoginForm > form > div > div > input[type=text] {
+	border: none;
+	border-bottom: 3px solid #82edb9;
+	width: 90%;
+	height: 50px;
+	margin-top: 10px;
+	font-size: 20pt;
+	color:#82edb9;
+}
+*:focus {
+    outline: none;
+}
+.RegisterLoginForm > form > button {
+	background: none;
+	border: 3px solid #82edb9;
+	width: 90%;
+	height: 50px;
+	margin-top: 50px;
+	transition-duration: 0.4s;
+	margin-bottom: 40px;
+}
+.RegisterLoginForm > form > button:hover {
+	background-color: #82edb9;
+	color: white;
+}
+.RegisterLoginForm > form > div > input::placeholder {
+  color: #bbc4b9;
+  font-size: 20pt;
+}
+.RegisterLoginForm > form > div > div > input::placeholder {
+  color: #bbc4b9;
+  font-size: 20pt;
+}
+.RegisterLoginForm > form > div > input {
+	caret-color: #82edb9;
 }

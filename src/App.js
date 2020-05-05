@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
 import RegisterLoginForm from './RegisterLoginForm'
-import Header from './Header'
+import Home from './Home'
+import UserContainer from './UserContainer'
 import MySongContainer from './MySongContainer'
+import SongContainer from './SongContainer'
 
 export default class App extends Component {
     constructor() {
@@ -10,7 +12,8 @@ export default class App extends Component {
 
         this.state = {
             loggedIn: false,
-            loggedInUsername: ''
+            loggedInUsername: '',
+            currentView: 'home',
         }
     }
     register = async (registerInfo) => {
@@ -33,7 +36,8 @@ export default class App extends Component {
             if (registerResponse.status === 201) {
                 this.setState({
                     loggedIn: true,
-                    loggedInUsername: registerJson.data.username
+                    loggedInUsername: registerJson.data.username,
+                    currentView: 'home',
                 })
             }
         } catch(err) {
@@ -61,7 +65,8 @@ export default class App extends Component {
             if(loginResponse.status === 200) {
                 this.setState({
                     loggedIn: true,
-                    loggedInUsername: loginJson.data.username
+                    loggedInUsername: loginJson.data.username,
+                    currentView: 'home',
                 })
             }
         } catch(err) {
@@ -91,23 +96,81 @@ export default class App extends Component {
             console.error(err)
         }
     }
-
+    setViews = async (newView) => {
+        this.setState({
+            currentView: newView
+        })
+    }
     render() {
         return(
             <div className="App">
-                {   
-                    this.state.loggedIn
-                    ?
-                    <div>
-                        <Header username={this.state.loggedInUsername} logout={this.logout}/>
-                        <MySongContainer />
+                <img src="https://i.imgur.com/LyYeSoC.png" alt='logo'/>
+                <div>
+                    <ul className="Navigation">
+                        {
+                            this.state.loggedIn === true
+                            ?
+                            <p>Logged in as&nbsp;{this.state.loggedInUsername}</p>
+                            :
+                            null
+                        }
+                        <li><span onClick={() => this.setViews('home')}>Home</span></li>
+                        <li><span onClick={() => this.setViews('login')}>Sign In</span></li>
+                        <li><span onClick={() => this.setViews('users')}>Users</span></li>
+                        {
+                            this.state.loggedIn === true
+                            ?
+                            <React.Fragment>
+                                <li><span onClick={() => this.setViews('allSongs')}>Songs</span></li>
+                                <li><span onClick={() => this.setViews('myCollection')}>My Collection</span></li>
+                                <li><span onClick={this.logout}>Logout</span></li>
+                            </React.Fragment>
+                            :
+                            null
+                        }
+                    </ul>
+                    <div className="Pages">
+                        {
+                            this.state.currentView === 'home'
+                            ?
+                            <Home />
+                            :
+                            null
+                        }
+                        {
+                            this.state.currentView === 'users'
+                            ?
+                            <UserContainer />
+                            :
+                            null
+                        }
+                        {
+                            this.state.currentView === 'allSongs'
+                            ?
+                            <SongContainer />
+                            :
+                            null
+                        }
+                        {
+                            this.state.currentView === 'myCollection'
+                            ?
+                            <MySongContainer />
+                            :
+                            null
+                        }
+                        {
+                            this.state.currentView === 'login'
+                            ?
+                            <RegisterLoginForm 
+                                login={this.login}
+                                register={this.register}
+                            />
+                            :
+                            null
+                            
+                        }
                     </div>
-                    :
-                    <RegisterLoginForm 
-                        login={this.login}
-                        register={this.register}
-                    />
-                }
+                </div>
             </div>
         )
     }

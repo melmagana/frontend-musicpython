@@ -40,28 +40,26 @@ export default class RegisterLoginForm extends Component {
 	render() {
 		return(
 			<div className="RegisterLoginForm">
-				<h2>{this.state.action}</h2>
 				<form onSubmit={this.handleSubmit}>
+					<h2>{this.state.action}</h2>
 					{
 						this.state.action === 'Register'
 						&&
 						<div>
 							<div>
-								<label>name</label>
 								<input
 									type='text'
 									name='name'
-									placeholder='enter name'
+									placeholder='Name'
 									value={this.state.name}
 									onChange={this.handleChange}
 								/>
 							</div>
 							<div>
-								<label>username</label>
 								<input
 									type='text'
 									name='username'
-									placeholder='enter username'
+									placeholder='Username'
 									value={this.state.username}
 									onChange={this.handleChange}
 								/>
@@ -69,21 +67,19 @@ export default class RegisterLoginForm extends Component {
 						</div>
 					}
 					<div>
-						<label>email</label>
 						<input
 							type='email'
 							name='email'
-							placeholder='enter email'
+							placeholder='Email'
 							value={this.state.email}
 							onChange={this.handleChange}
 						/>
 					</div>
 					<div>
-						<label>password</label>
 						<input
 							type='password'
 							name='password'
-							placeholder='enter password'
+							placeholder='Password'
 							value={this.state.password}
 							onChange={this.handleChange}
 						/>
@@ -91,18 +87,18 @@ export default class RegisterLoginForm extends Component {
 					<button type='Submit'>
 						{this.state.action === 'Login' ? 'Log In' : 'Sign Up'}
 					</button>
+					{
+						this.state.action === 'Login'
+						?
+						<p>
+							Not a member? Sign Up <span onClick={this.switchForm}>Here</span>
+						</p>
+						:
+						<p>
+							Already a member? Log In <span onClick={this.switchForm}>Here</span>
+						</p>
+					}
 				</form>
-				{
-					this.state.action === 'Login'
-					?
-					<p>
-						Not a member? Sign Up <span onClick={this.switchForm}>Here</span>
-					</p>
-					:
-					<p>
-						Already a member? Log In <span onClick={this.switchForm}>Here</span>
-					</p>
-				}
 			</div>
 		)
 	}

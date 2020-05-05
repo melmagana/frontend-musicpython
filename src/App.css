@@ -1,3 +1,26 @@
 .App {
-	
+}
+.App > img {
+	width: 100px;
+	display: block;
+	margin-top: 40px;
+	margin-left: 50px;
+}
+.App > div {
+	display: flex;
+}
+.App > div > .Navigation {
+	list-style: none;
+	height: 500px;
+	margin-left: 50px;
+	padding-left: 0px;
+}
+.App >  div > .Navigation > li > span {
+	display: block;
+	width: 200px;
+	margin-top: 20px;
+}
+.App > div > .Pages {
+	margin-left: 80px;
+	margin-right: 50px;
 }
