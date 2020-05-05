@@ -2,8 +2,6 @@ import React, {Component} from 'react'
 import MySongList from '../MySongList'
 import AddSongForm from '../AddSongForm'
 import EditSongModal from '../EditSongModal'
-import Header from '../Header'
-import SongContainer from '../SongContainer'
 
 export default class MySongContainer extends Component {
 	constructor() {
@@ -11,7 +9,10 @@ export default class MySongContainer extends Component {
 
 		this.state = {
 			songs: [],
-			showSongs: false
+			ifAddingSong: false,
+			showMySongs: false,
+			currentView: 'show'
+
 		}
 	}
 	componentDidMount() {
@@ -131,34 +132,57 @@ export default class MySongContainer extends Component {
 			idOfSongToEdit: -1
 		})
 	}
-	showSongs = () => {
-		if(this.state.showSongs === false) {
+	showMySongs = () => {
+		if(this.state.showMySongs === false) {
 			this.setState({
-				showSongs: true
+				showMySongs: true
 			})
 		} else {
 			this.setState({
-				showSongs: false
+				showMySongs: false
 			})
 		}
+	}
+	ifAddingSong = () => {
+		if(this.state.ifAddingSong === false) {
+			this.setState({
+				ifAddingSong: true
+			})
+		} else {
+			this.setState({
+				ifAddingSong: false
+			})
+		}
+	}
+	setViews = (newView) => {
+		this.setState({
+			currentView: newView
+		})
 	}
 	render(){
 		return(
 			<div className="MySongContainer">
-				<span onClick={this.showSongs}>All Songs</span>
+				<span onClick={() => this.setViews('add')}>Add Song</span>
+				<span> <b>|</b> </span>
+				<span onClick={() => this.setViews('show')}>My Songs</span>
 				<h2>MySongContainer</h2>
-				<AddSongForm createSong={this.createSong}/>
-				<MySongList 
-					songs={this.state.songs}
-					deleteSong={this.deleteSong}
-					editSong={this.editSong}
-				/>
 				{
-					this.state.showSongs ? (
-						<SongContainer/>
-					) : (
-						null
-					)
+					this.state.currentView === 'show' 
+					?
+					<MySongList 
+						songs={this.state.songs}
+						deleteSong={this.deleteSong}
+						editSong={this.editSong}
+					/>
+					:
+					null
+				}
+				{
+					this.state.currentView === 'add'
+					?
+					<AddSongForm createSong={this.createSong}/>
+					:
+					null
 				}
 				{
 					this.state.idOfSongToEdit > -1
