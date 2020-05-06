@@ -33,7 +33,6 @@ export default class UserContainer extends Component {
 	render(){
 		return(
 			<div className="UserContainer">
-				<h2>All Users</h2>
 				<UserList users={this.state.users}/>
 			</div>
 		)

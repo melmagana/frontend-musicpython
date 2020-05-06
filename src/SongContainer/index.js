@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import SongList from '../SongList'
+import './index.css'
 
 export default class SongContainer extends Component {
 	constructor() {

@@ -1,0 +1,16 @@
+.MySongContainer > h2 {
+	color: #b5f4d6;
+	letter-spacing: 1px;
+	margin-top: 40px;
+}
+.MySongContainer > span {
+	background-color: #60e8a6;
+	color: #2c312f;
+	font-weight: bold;
+	padding: 10px;
+	margin-right: 10px;
+	cursor:pointer;
+}
+.MySongContainer > span:hover {
+	background-color: #1dc975;	
+}

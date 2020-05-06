@@ -4,7 +4,7 @@ import './index.css'
 export default function Home() {
 	return(
 		<div className="Home">
-			<h1>Hello,<br/>Song Listener.</h1>
+			<h1>Hello, Song Listener<br/>To Music Python</h1>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 				Etiam quam turpis, egestas ut posuere eu, volutpat et justo. 

@@ -88,7 +88,8 @@ export default class App extends Component {
             if(logoutResponse.status === 200) {
                 this.setState({
                     loggedIn: false,
-                    loggedInUsername: ''
+                    loggedInUsername: '',
+                    currentView: 'login'
                 })
             }
         } catch(err) {
@@ -110,13 +111,13 @@ export default class App extends Component {
                         {
                             this.state.loggedIn === true
                             ?
-                            <p>Logged in as&nbsp;{this.state.loggedInUsername}</p>
+                            <p>Logged in as&nbsp;<b>{this.state.loggedInUsername}</b></p>
                             :
                             null
                         }
                         <li><span onClick={() => this.setViews('home')}>Home</span></li>
-                        <li><span onClick={() => this.setViews('login')}>Sign In</span></li>
                         <li><span onClick={() => this.setViews('users')}>Users</span></li>
+        
                         {
                             this.state.loggedIn === true
                             ?
@@ -126,7 +127,7 @@ export default class App extends Component {
                                 <li><span onClick={this.logout}>Logout</span></li>
                             </React.Fragment>
                             :
-                            null
+                            <li><span onClick={() => this.setViews('login')}>Sign In</span></li>
                         }
                     </ul>
                     <div className="Pages">

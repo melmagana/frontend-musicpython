@@ -1,0 +1,8 @@
+.SongContainer {
+	color: #b5f4d6;
+}
+
+.SongContainer > h2 {
+	margin-bottom: 40px;
+	letter-spacing: 1px;
+}

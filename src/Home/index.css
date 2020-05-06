@@ -1,14 +1,16 @@
 .Home {
-	margin-top: 100px;
+	margin-top: 50px;
 	text-align: center;
 }
 
 .Home > h1 {
 	margin-bottom: 50px;
 	font-size: 50pt;
+	color: #b5f4d6;
 }
 
 .Home > p {
 	line-height: 30px;
 	letter-spacing: .5px;
+	color: #b5f4d6;
 }

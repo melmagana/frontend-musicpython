@@ -1,24 +1,22 @@
 import React from 'react'
-import {Card} from 'semantic-ui-react'
+import './index.css'
+
 
 export default function UserList(props) {
 	console.log(props)
 	const users = props.users.map(user => {
 		return(
-			<Card key={user.id}>
-				<Card.Content>
-					<Card.Header>
-						{user.username}
-					</Card.Header>
-				</Card.Content>
-			</Card>
+			<div className="User">
+				<div key={user.id}>
+					<p>@{user.username}</p>
+				</div>
+			</div>
 		)
 	})
 	return(
 		<div className="UserList">
-			<Card.Group>
-				{users}
-			</Card.Group>
+		<h2>All Users of Music Python</h2>
+			<div>{users}</div>
 		</div>
 	)
 }

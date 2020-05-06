@@ -31,8 +31,8 @@ export default class AddSongForm extends Component {
 	render() {
 		return(
 			<Segment>
-				<h3>Add Song To Your Collection</h3>
-				<Form onSubmit={this.handleSubmit}>
+				<h3>Add A Song</h3>
+				<Form size="small" onSubmit={this.handleSubmit}>
 					<Label>Song Title</Label>
 					<Form.Input
 						type='text'

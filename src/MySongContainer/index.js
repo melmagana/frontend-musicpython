@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import MySongList from '../MySongList'
 import AddSongForm from '../AddSongForm'
 import EditSongModal from '../EditSongModal'
+import './index.css'
 
 export default class MySongContainer extends Component {
 	constructor() {
@@ -9,8 +10,6 @@ export default class MySongContainer extends Component {
 
 		this.state = {
 			songs: [],
-			ifAddingSong: false,
-			showMySongs: false,
 			currentView: 'show'
 
 		}
@@ -81,7 +80,8 @@ export default class MySongContainer extends Component {
 				const songs = this.state.songs
 				songs.push(createSongJson.data)
 				this.setState({
-					songs: songs
+					songs: songs,
+					currentView: 'show'
 				})
 			}
 
@@ -132,28 +132,6 @@ export default class MySongContainer extends Component {
 			idOfSongToEdit: -1
 		})
 	}
-	showMySongs = () => {
-		if(this.state.showMySongs === false) {
-			this.setState({
-				showMySongs: true
-			})
-		} else {
-			this.setState({
-				showMySongs: false
-			})
-		}
-	}
-	ifAddingSong = () => {
-		if(this.state.ifAddingSong === false) {
-			this.setState({
-				ifAddingSong: true
-			})
-		} else {
-			this.setState({
-				ifAddingSong: false
-			})
-		}
-	}
 	setViews = (newView) => {
 		this.setState({
 			currentView: newView
@@ -163,9 +141,8 @@ export default class MySongContainer extends Component {
 		return(
 			<div className="MySongContainer">
 				<span onClick={() => this.setViews('add')}>Add Song</span>
-				<span> <b>|</b> </span>
 				<span onClick={() => this.setViews('show')}>My Songs</span>
-				<h2>MySongContainer</h2>
+				<h2>My Collection of Songs</h2>
 				{
 					this.state.currentView === 'show' 
 					?

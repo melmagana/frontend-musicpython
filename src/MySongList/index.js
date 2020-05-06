@@ -7,13 +7,13 @@ export default function MySongList(props) {
 		return(
 			<Card key={song.id}>
 				<Card.Content extra>
-					{song.song_title}
+					<b>Name</b> {song.song_title}
 					<br/>
-					{song.album_title}
+					<b>Artist</b> {song.artist}
 					<br/>
-					{song.genre}
+					<b>Album</b> {song.album_title}
 					<br/>
-					{song.artist}
+					<b>Genre</b> {song.genre}
 					<br/>
 					{song.date_posted}
 					<Button onClick={() => props.editSong(song.id)}>
