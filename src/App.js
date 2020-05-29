@@ -105,9 +105,8 @@ export default class App extends Component {
     render() {
         return(
             <div className="App">
-                <img src="https://i.imgur.com/LyYeSoC.png" alt='logo'/>
-                <div>
-                    <ul className="Navigation">
+                <React.Fragment>
+                    <div className="Navigation">
                         {
                             this.state.loggedIn === true
                             ?
@@ -115,21 +114,22 @@ export default class App extends Component {
                             :
                             null
                         }
-                        <li><span onClick={() => this.setViews('home')}>Home</span></li>
-                        <li><span onClick={() => this.setViews('users')}>Users</span></li>
+
+                        <div className="Link"><span onClick={() => this.setViews('home')}>Home</span></div>
+                        <div className="Link"><span onClick={() => this.setViews('users')}>Users</span></div>
         
                         {
                             this.state.loggedIn === true
                             ?
                             <React.Fragment>
-                                <li><span onClick={() => this.setViews('allSongs')}>Songs</span></li>
-                                <li><span onClick={() => this.setViews('myCollection')}>My Collection</span></li>
-                                <li><span onClick={this.logout}>Logout</span></li>
+                                <div className="Link"><span onClick={() => this.setViews('allSongs')}>Songs</span></div>
+                                <div className="Link"><span onClick={() => this.setViews('myCollection')}>My Collection</span></div>
+                                <div className="Link"><span onClick={this.logout}>Logout</span></div>
                             </React.Fragment>
                             :
-                            <li><span onClick={() => this.setViews('login')}>Sign In</span></li>
+                            <div className="Link"><span onClick={() => this.setViews('login')}>Sign In</span></div>
                         }
-                    </ul>
+                    </div>
                     <div className="Pages">
                         {
                             this.state.currentView === 'home'
@@ -171,7 +171,7 @@ export default class App extends Component {
                             
                         }
                     </div>
-                </div>
+                </React.Fragment>
             </div>
         )
     }

@@ -1,97 +1,87 @@
-.RegisterLoginForm{
-	text-align: center;
-	margin-top: 50px;
-}
-.RegisterLoginForm > form {
+.RegisterLoginForm {
 	width: 1000px;
+	margin-left: 100px;
+	margin-right: 100px;
 }
+
 .RegisterLoginForm > form > h2 {
-	font-size: 30pt;
+	font-family: 'Roboto', sans-serif;
+	font-size: 40pt;
+	font-weight: 900;
 	letter-spacing: 1px;
-	color:#b5f4d6;
+	margin-bottom: 50px;
 }
-.RegisterLoginForm > form > div > input[type=email] {
-	border: none;
-	border-bottom: 3px solid #b5f4d6;
-	width: 90%;
-	height: 50px;
-	margin-top: 10px;
-	font-size: 20pt;
-	color:#b5f4d6;
+
+.RegisterLoginForm > form > div > div > input[type=text], input[type=email], input[type=password] {
 	background: none;
-	padding-left: 10px;
-}
-.RegisterLoginForm > form > div > input[type=password] {
+	font-family: 'Assistant', sans-serif;
+	font-size: 30px;
+	width: 1000px;
+	margin-bottom: 10px;
 	border: none;
-	border-bottom: 3px solid #b5f4d6;
-	width: 90%;
-	height: 50px;
-	margin-top: 10px;
-	font-size: 20pt;
-	color:#b5f4d6;
-	background: none;
-	padding-left: 10px;
+	border-bottom: 1px solid black;
 }
-.RegisterLoginForm > form > div > div > input[type=text] {
-	border: none;
-	border-bottom: 3px solid #b5f4d6;
-	width: 90%;
-	height: 50px;
-	margin-top: 10px;
-	font-size: 20pt;
-	color:#b5f4d6;
-	background: none;
-	padding-left: 10px;
-}
-*:focus {
-    outline: none;
-}
+
 .RegisterLoginForm > form > button {
-	background: none;
-	border: 3px solid #b5f4d6;
-	width: 90%;
-	height: 60px;
-	margin-top: 50px;
-	transition-duration: 0.4s;
-	margin-bottom: 40px;
-	cursor:pointer;
-	color: #b5f4d6;
-	font-weight: bold;
-	letter-spacing: 1px;
-	font-size: 15pt;
-}
-.RegisterLoginForm > form > button:hover {
-	background-color: #b5f4d6;
-	color: #282922;
-}
-.RegisterLoginForm > form > div > input::placeholder {
-  color: #bbc4b9;
-  font-size: 20pt;
-}
-.RegisterLoginForm > form > div > div > input::placeholder {
-  color: #bbc4b9;
-  font-size: 20pt;
-}
-.RegisterLoginForm > form > div > input {
-	caret-color: #b5f4d6;
-}
-.RegisterLoginForm > form > div > input:-webkit-autofill,
-.RegisterLoginForm > form > div > input:-webkit-autofill:hover, 
-.RegisterLoginForm > form > div > input:-webkit-autofill:focus,
-.RegisterLoginForm > form > div > textarea:-webkit-autofill,
-.RegisterLoginForm > form > div > textarea:-webkit-autofill:hover,
-.RegisterLoginForm > form > div > textarea:-webkit-autofill:focus,
-.RegisterLoginForm > form > div > select:-webkit-autofill,
-.RegisterLoginForm > form > div > select:-webkit-autofill:hover,
-.RegisterLoginForm > form > div > select:-webkit-autofill:focus {
-  -webkit-text-fill-color: #b5f4d6;
-  -webkit-box-shadow: 0 0 0px 1000px #282922 inset;
-}
-.RegisterLoginForm > form > p {
-	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12pt;
+	font-weight: 700;
 	letter-spacing: .5px;
+	text-transform: uppercase;
+	border-radius: 50px;
+	width: 1000px;
+	height: 50px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	cursor: pointer;
 }
-.RegisterLoginForm > form > p > span {
-	color: #eeec3e;
-	font-weight: bold;
+
+.RegisterLoginForm > form > p {
+	font-family: 'Assistant', sans-serif;
+	font-size: 12pt;
+	text-align: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

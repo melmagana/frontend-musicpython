@@ -1,16 +1,19 @@
 .Home {
-	margin-top: 50px;
-	text-align: center;
+	width: 1000px;
+	margin-left: 100px;
+	margin-right: 100px;
 }
 
 .Home > h1 {
-	margin-bottom: 50px;
-	font-size: 50pt;
-	color: #b5f4d6;
+	font-family: 'Roboto', sans-serif;
+	font-size: 60pt;
+	font-weight: 900;
+	text-align: center;
+	letter-spacing: 1px;
+	margin-bottom: 30px;
 }
-
 .Home > p {
-	line-height: 30px;
-	letter-spacing: .5px;
-	color: #b5f4d6;
+	font-family: 'Assistant', sans-serif;
+	font-size: 12pt;
+	text-align: center;
 }

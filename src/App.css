@@ -1,42 +1,37 @@
-.App > img {
-	width: 100px;
-	display: block;
-	margin-top: 40px;
-	margin-left: 50px;
-	margin-bottom: 10px;
-}
-.App > div {
+.App {
 	display: flex;
 }
-.App > div > .Navigation {
-	list-style: none;
-	height: 500px;
-	margin-left: 50px;
-	padding-left: 0px;
-	border-right: 3px solid #60e8a6;
-}
-.App > div > .Navigation > p {
-	margin-top: 10px;
-	margin-bottom: 30px;
-	color: #a9c7b8;
-	text-transform: uppercase;
-	font-size: 8pt;
-	letter-spacing: .25pt;
-}
-.App >  div > .Navigation > li > span {
-	display: block;
+
+.Navigation {
+	background-color: red;
 	width: 200px;
-	height: 40px;
-	margin-top: 10px;
-	font-weight: bold;
-	letter-spacing: .5px;
-	color: #60e8a6;
-	cursor:pointer;
 }
-.App >  div > .Navigation > li > span:hover {
-	color: #1dc975;
+
+.Link {
+	background-color: lightblue;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12pt;
+	font-weight: 700;
+	margin-bottom: 10px;
+	padding: 10px 0 10px 30px;
+	cursor: pointer;
 }
-.App > div > .Pages {
-	margin-left: 60px;
-	margin-right: 50px;
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: green;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+*:focus {
+    outline: none;
 }

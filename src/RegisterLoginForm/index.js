@@ -16,7 +16,7 @@ export default class RegisterLoginForm extends Component {
 	switchForm = () => {
 		if(this.state.action === 'Login') {
 			this.setState({
-				action: 'Register'
+				action: 'Create Account'
 			})
 		} else {
 			this.setState({
@@ -31,7 +31,7 @@ export default class RegisterLoginForm extends Component {
 	}
 	handleSubmit = (event) => {
 		event.preventDefault()
-		if(this.state.action === 'Register') {
+		if(this.state.action === 'Create Account') {
 			this.props.register(this.state)
 		} else {
 			this.props.login(this.state)
@@ -43,7 +43,7 @@ export default class RegisterLoginForm extends Component {
 				<form onSubmit={this.handleSubmit}>
 					<h2>{this.state.action}</h2>
 					{
-						this.state.action === 'Register'
+						this.state.action === 'Create Account'
 						&&
 						<div>
 							<div>
